@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #10161f;
+}
+
+body {
+  background: var(--background);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@keyframes spin3D {
+  0% {
+    transform: perspective(600px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(600px) rotateY(-360deg);
+  }
+}
+
+.spin-3d {
+  animation: spin3D 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+div[data-tc-modal="true"] div {
+  margin-bottom: 0;
+}
+input[type="text"] {
+  font-size: 16px;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  background-color: #25293DD9;
+  backdrop-filter: blur(5px);
+  min-width: 300px;
+  width: fit-content;
+  min-height: 48px;
+  border-radius: 14px;
+  transform: translateX(-50%);
+  padding: 10px 14px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 400;
+  font-size: 13px;
+  z-index: 1000;
+  animation: slideDown 0.3s ease-out, slideUp 0.3s ease-out 2.7s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+}
