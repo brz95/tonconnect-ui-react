@@ -6,8 +6,17 @@
 ### Порядок команд для запуска
 ```sh
 git clone https://github.com/brz95/tonconnect-ui-react.git
+```
+
+```sh
 cd tonconnect-ui-react
+```
+
+```sh
 yarn
+```
+
+```sh
 yarn dev
 ```
 
